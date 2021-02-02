@@ -1,0 +1,29 @@
+.drawer
+  &__elements  
+    width: min(40rem, 100vw)
+    border-left: 1px solid var(--color-border)
+    background: var(--color-light)
+    padding: 2rem    
+    > * 
+      display: block 
+      padding: 0.5rem 0   
+      width: 100%   
+    > a 
+      display: block
+      color: var(--color-content)
+      text-decoration: none   
+      //font-size: var(--font-xl)
+      &:hover 
+        color: var(--color-brand)    
+.disabled 
+  color: var(--color-muted) !important
+  &:hover
+    color: var(--color-muted) !important
+       
+.heading
+  font-family: 'Montserrat', sans-serif
+  font-weight: 900      
+  color: var(--color-brand)  
+
+      
+      

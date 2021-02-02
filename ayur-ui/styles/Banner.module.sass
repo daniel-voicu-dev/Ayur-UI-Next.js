@@ -1,0 +1,74 @@
+.component
+  display: grid 
+  width: min(100rem,100%)
+  height: 40rem
+  transition: var(--transition)
+  &__content
+    display: flex 
+    flex-wrap: wrap
+    transition: var(--transition)
+    grid-area: 1/1/-1/-1
+    background: #d9d9d987
+    transform: translate(40px, 40px) skewY(-3deg)
+    justify-content: center 
+    align-items: center  
+    border: 2px solid #000  
+    position: relative
+  &__backdrop    
+    grid-area: 1/1/-1/-1
+    z-index: -1
+    transition: var(--transition)
+    transform : translate(0px, 0px) skewY(-3deg)  
+  &__decor 
+    background: #050505a1
+    width: min(50rem, 100%)    
+    height: min-content
+    padding: 2rem
+    transition: var(--transition)
+    color: #fff
+  &__justify
+    display: flex 
+    flex-wrap: wrap 
+    justify-content: space-between
+    position: absolute
+    left: -2rem
+    right: -2rem
+    top: -2rem  
+  &__align
+    display: flex 
+    flex-wrap: wrap 
+    flex-direction: column
+    justify-content: space-between
+    position: absolute
+    left: -2rem
+    bottom: 2rem
+    top: 4rem    
+  &__backdrop__type
+    position: absolute    
+    right: 0rem
+    bottom: -2rem  
+    z-index: 2
+    > * 
+      margin-right: 2rem
+  &__backdrop
+    //overflow: hidden
+    //height: var(--banner-height, auto)
+    &__color    
+      background-color: blue 
+      display: flex 
+      width: 100%
+      height: 100%
+    &__video, &__image    
+      display: block 
+      width: 100%
+      height: 100%
+      object-fit: cover 
+.video__overlay 
+  background: #00000052
+  position: absolute 
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+      

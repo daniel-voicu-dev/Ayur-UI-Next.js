@@ -2,15 +2,15 @@
 @use "./../mixins"
 @use "sass:math"
 @use "sass:map"
-$headingSizeThreshold: 511
-$headingSizeThreshold: 1024
-\:root 
 
-  --font-family-headings: "Montserrat", "Georgia", serif
+$headingSizeThreshold: 1023
+\:root 
+  --font-family-headings: "Montserrat", serif
   --font-family-hero: var(--font-family-headings)
-  --font-family-headings-secondary: "Lora", "Georgia",serif  
-  --font-family-main: "Hind Madurai","Verdana", sans-serif
+  --font-family-headings-secondary: "Lora", serif  
+  --font-family-main: "Hind Madurai", sans-serif
   --font-stack-main: normal 400 1.6rem/1.4 var(--font-family-main)
+  --button-font-family: "Hind Madurai", serif
   
 p
   margin: 0 0 0.5rem
@@ -27,6 +27,10 @@ p
     font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})    
     margin: 0
     line-height: 1
+@for $i from -2 through 3
+  \:root 
+    #{--font-}#{5 - $i}: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})
+    
    
 
   

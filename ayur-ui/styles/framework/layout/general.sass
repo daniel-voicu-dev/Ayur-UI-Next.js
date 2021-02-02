@@ -20,12 +20,17 @@ a:not(.btn)
   height: var(--icon-size, 1.6rem)
   display: inline-flex
   flex-wrap: wrap
-  color: var(--icon-color, inherit)
-  fill: var(--icon-color, inherit)
+  color: var(--icon-color, var(--color-content))
+  fill: var(--icon-color, var(--color-content))
   transition: var(--transition)
   &:hover 
     color: var(--icon-color-hover, var(--icon-color, inherit))
     fill: var(--icon-color-hover, var(--icon-color, inherit))
+ul 
+  margin: 0  
+  padding-left: 2rem
+  &.unstyle 
+    padding: 0  
 svg  
   display: block
   width: 100%
