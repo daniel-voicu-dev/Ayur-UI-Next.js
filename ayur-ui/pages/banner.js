@@ -34,12 +34,12 @@ const banner = () => {
             <p>The banner needs to have the following features:</p>
             <ul>
               <li>The backdrop needs to support color, image and video background</li>
-              <li>The content needs to be aligned in every position supported by modern browsers</li>
+              <li>The content needs to be aligned in any position currently supported by modern browsers</li>
             </ul>
           </div>
           
-          <h3 className="h2 font-subheading">1. Markup</h3>
-          <pre className="p-2 border-top border-bottom"><code>
+          <h3 className="h2 font-subheading">1. HTML Markup</h3>
+          <pre className="p-2 border-top border-bottom mb-5"><code>
             &lt;div class="banner"&gt;<br/>
             &nbsp;&lt;div class="banner__content"&gt;<br/>
             &nbsp;&nbsp;&lt;div class="banner__decor"&gt;<br/>
@@ -56,13 +56,13 @@ const banner = () => {
             &nbsp;&lt;/div&gt;<br/>
             &lt;/div&gt;<br/>
           </code></pre>
-          <div className="demo-b-container mt-5">
+          <div className="demo-b-container my-5">
             <div className={styles.component}>
               <div ref={contentRef} className={styles.component__content}>
                 <div className={styles.component__justify}>
-                  <button type="button" className="btn-fill--dark font-sm" onClick={e=>handleClick("flex-start")}>.justify-content-left</button>
+                  <button type="button" className="btn-fill--dark font-sm" onClick={e=>handleClick("flex-start")}>.justify-content-start</button>
                   <button type="button" className="btn-fill--dark font-sm" onClick={e=>handleClick("center")}>.justify-content-center</button>
-                  <button type="button" className="btn-fill--dark font-sm" onClick={e=>handleClick("flex-end")}>.justify-content-right</button>
+                  <button type="button" className="btn-fill--dark font-sm" onClick={e=>handleClick("flex-end")}>.justify-content-end</button>
                 </div>
                 <div className={styles.component__align}>
                   <button type="button" className="btn-fill--dark font-sm" onClick={e=>handleAlignClick("flex-start")}>.align-items-top</button>
@@ -81,7 +81,57 @@ const banner = () => {
               </div>
             </div>
           </div>
+          <h3 className="h2 font-subheading pt-4">2. SASS</h3>
+          <div>
+            <pre className="p-2 border-top border-bottom"><code>
+            .banner<br/> 
+            &nbsp;&nbsp;display: grid<br/>
+            &nbsp;&nbsp;position: relative<br/>
+            &nbsp;&nbsp;&__content<br/> 
+            &nbsp;&nbsp;&nbsp;&nbsp;grid-area: 1/1/-1/-1<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;display: flex<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;align-items: center<br/>
+            &nbsp;&nbsp;&__backdrop<br/> 
+            &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;grid-area: 1/1/-1/-1<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;z-index: -1<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;position: relative<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&__element<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object-fit: cover<br/>
+            &nbsp;&nbsp;&__decor<br/> 
+            <span class="color-muted">&nbsp;&nbsp;&nbsp;&nbsp; //optional for style only</span><br/>
+            </code></pre>
+          </div>         
         </div>       
+      </div>
+      <div className="section__container container--narrow">
+        <div className="section__content">
+        <h3 className="h2 font-subheading pt-4 mb-2">3. Demo</h3>
+        </div>
+      </div>
+      <div className="section__container">
+        <div className="section__content">
+          <div className={styles.component__demo}>
+            <div className={styles.component__content__demo}>
+              <div className={styles.component__decor__demo}>
+                <h3 className="hr2 mb-2">Nam volutpat pellent ante non tristique</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa dolor, auctor ut lacus quis, elementum efficitur est. Vestibulum a nulla gravida, pretium elit at, tristique nisl. Duis vestibulum sapien urna, sit amet blandit tortor convallis ut. Nullam quis blandit ipsum. Nam neque tortor, pharetra eu urna sit amet, tristique aliquet enim. Curabitur finibus ut erat auctor fermentum. Cras ex orci, scelerisque ut nisi et, sagittis egestas augue.</p>
+                <button type="button" className="btn-border--light mt-2">Find out more</button>
+              </div>
+            </div>
+            <div className={styles.component__backdrop__demo}>
+              <div className={styles.video__overlay}></div>
+              <video autoPlay muted playsInline loop className={styles.banner__backdrop__element}>
+                <source src="assets/img/banner-demo.mp4" type="video/mp4"></source>
+              </video>
+            </div>
+          </div>
+        </div>
       </div>
       </BaseLayout>
     </div>
