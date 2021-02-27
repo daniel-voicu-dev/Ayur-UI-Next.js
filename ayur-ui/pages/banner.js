@@ -2,6 +2,7 @@ import styles from "../styles/Banner.module.sass"
 import {useRef,useState} from 'react'
 import Head from 'next/head'
 import BaseLayout from '../components/BaseLayout'
+import Heading from '../components/Heading'
 //import image from "../public/assets/img/banner-demo.jpg"
 
 const bannerColor = () => (<div className={styles.component__backdrop__color}></div>)
@@ -29,16 +30,16 @@ const banner = () => {
       <BaseLayout>
       <div className="section__container container--narrow">
         <div className="section__content font-lg">
-          <h2 className="hr1 w-100 mb-3">The Banner</h2>
+          <Heading style="hr1" cssClass="w-100 mb-3">The Banner</Heading>         
           <div className="mb-3">
             <p>The banner needs to have the following features:</p>
             <ul>
               <li>The backdrop needs to support color, image and video background</li>
               <li>The content needs to be aligned in any position currently supported by modern browsers</li>
             </ul>
-          </div>
+          </div>          
           
-          <h3 className="h2 font-subheading">1. HTML Markup</h3>
+          <Heading style="h2" font="subheading" weight="normal">1. HTML Markup</Heading>
           <pre className="p-2 border-top border-bottom mb-5"><code>
             &lt;div class="banner"&gt;<br/>
             &nbsp;&lt;div class="banner__content"&gt;<br/>
@@ -81,7 +82,7 @@ const banner = () => {
               </div>
             </div>
           </div>
-          <h3 className="h2 font-subheading pt-4">2. SASS</h3>
+          <Heading style="h2" font="subheading" weight="normal" cssClass="pt-4">2. SASS</Heading>
           <div>
             <pre className="p-2 border-top border-bottom"><code>
             .banner<br/> 
@@ -104,14 +105,14 @@ const banner = () => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object-fit: cover<br/>
             &nbsp;&nbsp;&__decor<br/> 
-            <span class="color-muted">&nbsp;&nbsp;&nbsp;&nbsp; //optional for style only</span><br/>
+            <span className="color-muted">&nbsp;&nbsp;&nbsp;&nbsp; //optional for style only</span><br/>
             </code></pre>
           </div>         
         </div>       
       </div>
       <div className="section__container container--narrow">
         <div className="section__content">
-        <h3 className="h2 font-subheading pt-4 mb-2">3. Demo</h3>
+        <Heading style="h2" font="subheading" weight="normal" cssClass="pt-4 mb-2">3. Demo</Heading>       
         </div>
       </div>
       <div className="section__container">
@@ -119,7 +120,7 @@ const banner = () => {
           <div className={styles.component__demo}>
             <div className={styles.component__content__demo}>
               <div className={styles.component__decor__demo}>
-                <h3 className="hr2 mb-2">Nam volutpat pellent ante non tristique</h3>
+                <Heading style="hr2" cssClass="mb-2">Nam volutpat pellent ante non tristique</Heading>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa dolor, auctor ut lacus quis, elementum efficitur est. Vestibulum a nulla gravida, pretium elit at, tristique nisl. Duis vestibulum sapien urna, sit amet blandit tortor convallis ut. Nullam quis blandit ipsum. Nam neque tortor, pharetra eu urna sit amet, tristique aliquet enim. Curabitur finibus ut erat auctor fermentum. Cras ex orci, scelerisque ut nisi et, sagittis egestas augue.</p>
                 <button type="button" className="btn-border--light mt-2">Find out more</button>
               </div>

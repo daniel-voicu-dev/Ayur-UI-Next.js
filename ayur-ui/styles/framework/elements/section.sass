@@ -45,6 +45,7 @@
     padding: var(--container-top-spacing, 0rem) var(--grid-gap) var(--container-bottom-spacing, 0rem)    
 .container
   --container: calc(100vw - var(--scrollbar-width, 4rem))
+  padding: 0 2rem
   +mixins.breakpoint(md)
     --container: calc(1024px - var(--scrollbar-width, 4rem))
   +mixins.breakpoint(lg)
@@ -54,6 +55,7 @@
   +mixins.breakpoint(xxl)
     --container: calc(1920px - var(--scrollbar-width, 4rem))
   &--narrow
+    padding: 0 2rem
     --container: calc(100vw - var(--scrollbar-width, 4rem))
     +mixins.breakpoint(md)
       --container: calc(1024px - var(--scrollbar-width, 4rem))

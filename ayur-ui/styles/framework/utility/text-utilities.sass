@@ -1,5 +1,4 @@
 @use "./../variables"
-@use "../mixins"
 \:root
   --font-xs: 1rem
   --font-sm: 1.2rem
@@ -13,14 +12,14 @@
   font-size: var(--small, 0.85em)
 .line-through
   text-decoration: line-through
+.text-decoration-underline
+  text-decoration: underline
 .text-decoration-none
   text-decoration: none !important
 .text-uppercase
   text-transform: uppercase
 .text-transform-none
   text-transform: none
-.text-ellipsis
-  +mixins.ellipsis
 .text-center
   text-align: center
 .text-left
@@ -28,7 +27,7 @@
 .text-right 
   text-align: right
 .weight-superbold
-  font-weight: var(--weight-superbold, 900) !important  
+  font-weight: var(--weight-superbold, 800) !important  
 .weight-bold, strong, b
   font-weight: var(--weight-bold, 700) !important
 .weight-normal
@@ -40,17 +39,16 @@
 .letter-spacing 
   letter-spacing: var(--letter-spacing, 0.1rem)  
 .font-heading 
-  font-family: var(--font-family-headings, inherit)  
-.font-subheading
-  font-family: var(--font-family-headings-secondary, var(--font-family-headings)) 
-  font-style: italic
+  font-family: var(--font-family-headings, inherit)
 .font-hero
-  font-family: var(--font-family-heroheadings, var(--font-family-headings))  
-  font-weight: 900 !important
+  font-family: var(--font-family-heroheadings, var(--font-family-headings))
+  font-weight: 900  
+.font-subheading
+  font-family: var(--font-family-headings-secondary, var(--font-family-headings))  
 .font-condensed
-  font-family: var(--font-condensed, "Roboto Condensed",sans-serif) 
+  font-family: var(--font-condensed, var(--font-family-main))
 .font-regular    
-  font-family: var(--font-regular, "Open Sans", sans-serif) 
+  font-family: var(--font-regular, var(--font-family-main))
 .line-height-2
   line-height: 2
 .line-height-1

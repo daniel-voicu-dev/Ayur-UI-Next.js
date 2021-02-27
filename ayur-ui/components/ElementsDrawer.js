@@ -11,7 +11,7 @@ const ElementsDrawer = (props,ref) => {
             <a>Banner</a>
           </Link>
           <Link href="/paragraph">
-            <a className={styles.disabled}>Paragraph</a>
+            <a>Paragraph</a>
           </Link>
           <Link href="/slider">
             <a className={styles.disabled}>Slider</a>
