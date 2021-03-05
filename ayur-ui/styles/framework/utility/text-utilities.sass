@@ -1,13 +1,15 @@
 @use "./../variables"
+@use "sass:map"
 \:root
-  --font-xs: 1rem
-  --font-sm: 1.2rem
-  --font-md: 1.4rem
-  --font-lg: 2rem
-  --font-xl: 2.4rem
-  --font-xxl: 3rem
-  --font-default: 1.6rem
-
+  // --font-xs: 1rem
+  // --font-sm: 1.2rem
+  // --font-md: 1.4rem
+  // --font-lg: 2rem
+  // --font-xl: 2.4rem
+  // --font-xxl: 3rem  
+  --font-default: #{map.get(variables.$typoScale, "base")}rem
+.font-default 
+  font-size: var(--font-default)
 .small
   font-size: var(--small, 0.85em)
 .line-through
@@ -60,7 +62,7 @@
   color: var(--color-link)
   cursor: pointer
   &:hover 
-    color: var(--hover-color, var(--color-link))
-@each $size in variables.$contentFontSizes
+    color: var(--hover-color, var(--color-link))   
+@each $size, $i in variables.$contentFontSizesMap
   .font-#{$size}
     font-size: var(--font-#{$size}) !important

@@ -3,6 +3,8 @@ import {useRef,useState} from 'react'
 import Head from 'next/head'
 import BaseLayout from '../components/BaseLayout'
 import Heading from '../components/Heading'
+import Container from '../components/Container'
+import ContentCustom from '../components/Content'
 //import image from "../public/assets/img/banner-demo.jpg"
 
 const bannerColor = () => (<div className={styles.component__backdrop__color}></div>)
@@ -28,9 +30,8 @@ const banner = () => {
         <title>Commergent UI | Banner</title>       
       </Head>
       <BaseLayout>
-      <div className="section__container container--narrow">
-        <div className="section__content font-lg">
-          <Heading style="hr1" cssClass="w-100 mb-3">The Banner</Heading>         
+      <Container container="narrow" cssClass="font-lg">
+          <Heading style="hr1" weight="superbold" cssClass="w-100 mb-3">The Banner</Heading>         
           <div className="mb-3">
             <p>The banner needs to have the following features:</p>
             <ul>
@@ -75,14 +76,15 @@ const banner = () => {
                   <button type="button" className="btn-fill--dark font-sm" onClick={e=>setBackdrop("image")}>Image</button>
                   <button type="button" className="btn-fill--dark font-sm" onClick={e=>setBackdrop("video")}>Video</button>
                 </div>
-                <div className={styles.component__decor}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae pretium massa. Sed et massa dictum, consequat magna sed, facilisis est. Proin pellentesque elementum velit. Sed ultrices consectetur tellus, eu tempor ante posuere a. Praesent ut porttitor mauris, eget tempor libero. Nunc egestas tortor fermentum purus blandit, ac elementum ligula mollis. Fusce ac feugiat neque. Cras tincidunt tincidunt ipsum vitae dignissim. Quisque fringilla at metus id iaculis.</div>
+                <div className={styles.component__decor}><ContentCustom>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae pretium massa. Sed et massa dictum, consequat magna sed, facilisis est. Proin pellentesque elementum velit. Sed ultrices consectetur tellus, eu tempor ante posuere a. Praesent ut porttitor mauris, eget tempor libero. Nunc egestas tortor fermentum purus blandit, ac elementum ligula mollis. Fusce ac feugiat neque. Cras tincidunt tincidunt ipsum vitae dignissim. Quisque fringilla at metus id iaculis.</ContentCustom></div>
               </div>
               <div className={styles.component__backdrop}>                
                 {backdrop === "color" ? bannerColor() : backdrop === "image" ? bannerImage() : bannerVideo()}
               </div>
             </div>
           </div>
-          <Heading style="h2" font="subheading" weight="normal" cssClass="pt-4">2. SASS</Heading>
+          <div className="pb-4"></div>
+          <Heading style="h2" font="subheading" weight="normal" cssClass="mt-4">2. SASS</Heading>
           <div>
             <pre className="p-2 border-top border-bottom"><code>
             .banner<br/> 
@@ -108,11 +110,10 @@ const banner = () => {
             <span className="color-muted">&nbsp;&nbsp;&nbsp;&nbsp; //optional for style only</span><br/>
             </code></pre>
           </div>         
-        </div>       
-      </div>
+        </Container>
       <div className="section__container container--narrow">
         <div className="section__content">
-        <Heading style="h2" font="subheading" weight="normal" cssClass="pt-4 mb-2">3. Demo</Heading>       
+        <Heading style="h2" font="subheading" weight="normal" cssClass="mt-4 mb-2">3. Demo</Heading>       
         </div>
       </div>
       <div className="section__container">
@@ -120,8 +121,8 @@ const banner = () => {
           <div className={styles.component__demo}>
             <div className={styles.component__content__demo}>
               <div className={styles.component__decor__demo}>
-                <Heading style="hr2" cssClass="mb-2">Nam volutpat pellent ante non tristique</Heading>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa dolor, auctor ut lacus quis, elementum efficitur est. Vestibulum a nulla gravida, pretium elit at, tristique nisl. Duis vestibulum sapien urna, sit amet blandit tortor convallis ut. Nullam quis blandit ipsum. Nam neque tortor, pharetra eu urna sit amet, tristique aliquet enim. Curabitur finibus ut erat auctor fermentum. Cras ex orci, scelerisque ut nisi et, sagittis egestas augue.</p>
+                <Heading style="hr2" weight="superbold" cssClass="mb-2">Nam volutpat pellent ante non tristique</Heading>
+                <ContentCustom><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa dolor, auctor ut lacus quis, elementum efficitur est. Vestibulum a nulla gravida, pretium elit at, tristique nisl. Duis vestibulum sapien urna, sit amet blandit tortor convallis ut. Nullam quis blandit ipsum. Nam neque tortor, pharetra eu urna sit amet, tristique aliquet enim. Curabitur finibus ut erat auctor fermentum. Cras ex orci, scelerisque ut nisi et, sagittis egestas augue.</p></ContentCustom>
                 <button type="button" className="btn-border--light mt-2">Find out more</button>
               </div>
             </div>

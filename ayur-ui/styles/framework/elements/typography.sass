@@ -17,18 +17,31 @@ p
   .#{h}#{5 - $i}, #{h}#{5-$i}
     font-family: var(--font-family-headings, var(--font-stack-main))
     font-weight: var(--weight-bold, 700)    
-    font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})
     margin: 0
+    @if $i >= 0
+      font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})
+    @else 
+      font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * 1 / math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * 1 / math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})  
+    
 @for $i from 5 through 6
   .hr#{7-$i}
-    font-family: var(--font-family-hero)
-    font-weight: var(--weight-superbold, 900)    
-    font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})    
+    font-family: var(--font-family-hero)    
+    font-weight: var(--weight-bold, 700)      
     margin: 0
     line-height: 1
-@for $i from -2 through 3
-  \:root 
-    #{--font-}#{5 - $i}: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})
+    @if $i >= 0
+      font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})    
+    @else 
+      font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * 1 / math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * 1 / math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})   
+
+\:root 
+  @each $name,$i in variables.$contentFontSizesMap 
+    @if $i >= 0
+      #{--font-}#{$name}: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})
+    @else
+      #{--font-}#{$name}: clamp(#{(math.min((map.get(variables.$mobileTypoScale, "base") * 1 / math.pow(map.get(variables.$mobileTypoScale, "ratio"), math.abs($i))), map.get(variables.$typoScale, "base") * 1 / math.pow(map.get(variables.$typoScale, "ratio"),math.abs($i)) ))}#{"rem"} , #{map.get(variables.$typoScale, "base") * 1 / math.pow(map.get(variables.$typoScale, "ratio"),math.abs($i))}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),math.abs($i)))*1000/$headingSizeThreshold}#{"vw"})
+
+
     
    
 

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {useRef} from 'react'
 import ElementsDrawer from '../components/ElementsDrawer'
+import Heading from '../components/Heading'
 import styles from '../styles/Home.module.sass'
 import {animateCSS} from '../components/Utilities'
 export default function Home() {
@@ -20,9 +21,9 @@ export default function Home() {
 
       <main className={styles.container}>
         <div>
-        <h1 className="hr1 w-100 text-center">Welcome to <span className="color-brand">Commergent UI</span></h1>
-          <div className={styles.container__narrow}>            
-            <p className="h1 weight-normal font-subheading mb-1">CSS Framework for Frontend Web Development</p>
+        <Heading style="hr1" weight="superbold" cssClass="w-100 text-center">Welcome to <span className="color-brand">Commergent UI</span></Heading>          
+          <div className={styles.container__narrow}>      
+            <Heading style="h1" weight="normal" font="subheading" cssClass="mb-1">CSS Framework for Frontend Web Development</Heading>                 
             <p className="font-xl color-neutral">Functional CSS | Modern Scale-Based Typography | Easy to Use</p>
             <div className="flex-wrap align-items-center child-mr-2 justify-content-center">              
               <Link href="/docs">
