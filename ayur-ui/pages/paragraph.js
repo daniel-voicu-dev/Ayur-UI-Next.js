@@ -15,29 +15,50 @@ const paragraph = () => {
         <Container container="narrow" cssClass="font-lg">
           <Heading style="hr1" weight="superbold" cssClass="w-100 mb-3">The Paragraph</Heading>                 
         </Container>
-        <Container container="wide" cssClass="mt-4">
-          <Paragraph image="/assets/img/banner-demo.jpg" cssClass="mb-4">
+        <Container container="narrow" cssClass="mt-4">
+          <Paragraph image="/assets/img/paragraph-nature-portrait-demo.jpg" contentWidth="4" contentPosition="1" cssClass="mb-4" mobileView="lg">
             <Heading style="hr2" weight="superbold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Heading>
-            <Heading style="h2" cssClass="font-subheading">Cras convallis hendrerit lectus, non malesuada neque malesuada et</Heading>
+            <Heading style="h2" font="subheading">Cras convallis hendrerit lectus, non malesuada neque malesuada et</Heading>
             <div className="text">
               <ContentCustom size="lg" weight="normal">
               <p>In convallis, enim non hendrerit blandit, augue nisi feugiat lacus, nec vulputate ligula augue vel magna. Mauris gravida id arcu eu maximus. In eleifend sem massa, vel gravida risus ullamcorper eget. Nullam lorem ipsum, dapibus at porta at, fringilla tristique sapien. Donec nec elit condimentum, eleifend leo vitae, ultrices lorem. Nullam bibendum, arcu quis posuere luctus, libero ligula molestie felis, vitae convallis velit mi eget neque. </p>
+              </ContentCustom>
+            </div>
+            <button type="button" className="btn-fill--brand" aria-label="button">Read more</button>
+          </Paragraph>
+          <Paragraph image="/assets/img/paragraph-nature-portrait-demo.jpg" contentWidth="3" contentPosition="-1" cssClass="mb-4">
+            <Heading style="hr2" weight="superbold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Heading>
+            <Heading style="h2" font="subheading">Cras convallis hendrerit lectus, non malesuada neque malesuada et</Heading>
+            <div className="text">
+              <ContentCustom size="lg" weight="normal">
+                <p>In convallis, enim non hendrerit blandit, augue nisi feugiat lacus, nec vulputate ligula augue vel magna. Mauris gravida id arcu eu maximus. In eleifend sem massa, vel gravida risus ullamcorper eget. Nullam lorem ipsum, dapibus at porta at, fringilla tristique sapien. Donec nec elit condimentum, eleifend leo vitae, ultrices lorem. Nullam bibendum, arcu quis posuere luctus, libero ligula molestie felis, vitae convallis velit mi eget neque. </p>
+              </ContentCustom>
+            </div>
+            <button type="button" className="btn-fill--brand" aria-label="button">Read more</button>
+          </Paragraph>
+        </Container>
+        <Container cssClass="mt-4">
+          <Paragraph image="/assets/img/paragraph-nature-landscape-demo.jpg" contentWidth="2" contentPosition="-1" cssClass="mb-4">
+            <Heading style="hr2" weight="superbold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Heading>
+            <Heading style="h2" font="subheading">Cras convallis hendrerit lectus, non malesuada neque malesuada et</Heading>
+            <div className="text">
+              <ContentCustom size="lg" weight="normal">
+                <p>In convallis, enim non hendrerit blandit, augue nisi feugiat lacus, nec vulputate ligula augue vel magna. Mauris gravida id arcu eu maximus. In eleifend sem massa, vel gravida risus ullamcorper eget. Nullam lorem ipsum, dapibus at porta at, fringilla tristique sapien. Donec nec elit condimentum, eleifend leo vitae, ultrices lorem. Nullam bibendum, arcu quis posuere luctus, libero ligula molestie felis, vitae convallis velit mi eget neque. </p>
               </ContentCustom>
             </div>
             <button type="button" className="btn-fill--brand" aria-label="button">Read more</button>
           </Paragraph>
           <Paragraph cssClass="mb-4">
             <Heading style="hr2" weight="superbold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Heading>
-            <Heading style="h2" cssClass="font-subheading">Cras convallis hendrerit lectus, non malesuada neque malesuada et</Heading>
+            <Heading style="h2" font="subheading">Cras convallis hendrerit lectus, non malesuada neque malesuada et</Heading>
             <div className="text">
               <ContentCustom size="lg" weight="normal">
-              <p>In convallis, enim non hendrerit blandit, augue nisi feugiat lacus, nec vulputate ligula augue vel magna. Mauris gravida id arcu eu maximus. In eleifend sem massa, vel gravida risus ullamcorper eget. Nullam lorem ipsum, dapibus at porta at, fringilla tristique sapien. Donec nec elit condimentum, eleifend leo vitae, ultrices lorem. Nullam bibendum, arcu quis posuere luctus, libero ligula molestie felis, vitae convallis velit mi eget neque. </p>
+                <p>In convallis, enim non hendrerit blandit, augue nisi feugiat lacus, nec vulputate ligula augue vel magna. Mauris gravida id arcu eu maximus. In eleifend sem massa, vel gravida risus ullamcorper eget. Nullam lorem ipsum, dapibus at porta at, fringilla tristique sapien. Donec nec elit condimentum, eleifend leo vitae, ultrices lorem. Nullam bibendum, arcu quis posuere luctus, libero ligula molestie felis, vitae convallis velit mi eget neque. </p>
               </ContentCustom>
             </div>
             <button type="button" className="btn-fill--brand" aria-label="button">Read more</button>
           </Paragraph>
-          
-        </Container>
+        </Container>  
       </BaseLayout>
     </div>
   )

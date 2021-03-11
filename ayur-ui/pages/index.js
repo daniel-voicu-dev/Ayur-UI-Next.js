@@ -5,6 +5,12 @@ import ElementsDrawer from '../components/ElementsDrawer'
 import Heading from '../components/Heading'
 import styles from '../styles/Home.module.sass'
 import {animateCSS} from '../components/Utilities'
+
+// import dynamic from "next/dynamic";
+
+// const lazysizes = dynamic(()=>{return import ('lazysizes').then(mod=>mod.)},{ssr:false})
+// lazysizes.init()
+
 export default function Home() {
   const elementsDR = useRef(null);
   const handleElementsClick = async () => {   

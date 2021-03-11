@@ -1081,6 +1081,11 @@
   dependencies:
     "minimist" "^1.2.0"
 
+"lazysizes@^5.3.0":
+  "integrity" "sha512-h5i4WPc2FdeTOUHBcU7eyNnOULPCC90wVho+SQTZRh9Q8lev6P0yFwKq8rvfMdBvsKsCyDQBdqoBng9FYbcR/g=="
+  "resolved" "https://registry.npmjs.org/lazysizes/-/lazysizes-5.3.0.tgz"
+  "version" "5.3.0"
+
 "line-column@^1.0.2":
   "integrity" "sha1-0lryk2tvSEkXKzEuR5LR2Ye8NKI="
   "resolved" "https://registry.npmjs.org/line-column/-/line-column-1.0.2.tgz"

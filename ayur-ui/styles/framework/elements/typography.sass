@@ -19,6 +19,7 @@ p
     font-weight: var(--weight-bold, 700)    
     margin: 0
     @if $i >= 0
+      line-height: 1.2
       font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})
     @else 
       font-size: clamp(#{(map.get(variables.$mobileTypoScale, "base") * 1 / math.pow(map.get(variables.$mobileTypoScale, "ratio"), $i))}#{"rem"} , #{map.get(variables.$typoScale, "base") * 1 / math.pow(map.get(variables.$typoScale, "ratio"),$i)}#{"rem"},  #{(map.get(variables.$typoScale, "base") * math.pow(map.get(variables.$typoScale, "ratio"),$i))*1000/$headingSizeThreshold}#{"vw"})  
