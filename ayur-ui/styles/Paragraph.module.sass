@@ -1,7 +1,8 @@
 .component  
   display: grid 
-  gap: var(--grid-gap)
-  grid-template-columns: repeat(6,minmax(0,1fr)) 
+  gap: var(--grid-gap, 2rem)
+  // grid-template-columns: repeat(6,minmax(0,1fr)) 
+  grid-template-columns: 1fr
   &__image 
     display: flex 
     flex-wrap: wrap 
