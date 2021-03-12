@@ -32,10 +32,10 @@ export default function Home() {
             <Heading style="h1" weight="normal" font="subheading" cssClass="mb-1">CSS Framework for Frontend Web Development</Heading>                 
             <p className="font-xl color-neutral">Functional CSS | Modern Scale-Based Typography | Easy to Use</p>
             <div className="flex-wrap align-items-center child-mr-2 justify-content-center">              
-              <Link href="/docs">
-                <a className="btn btn-fill--muted border-pill">Docs</a>
+              <Link href="/homepage">
+                <a className="btn btn-fill--brand border-pill">Demo</a>
               </Link>     
-              <button type="button" className="btn-fill--brand border-pill" onClick={e=>handleElementsClick(e)}>Elements</button>         
+              <button type="button" className="btn-fill--muted border-pill" onClick={e=>handleElementsClick(e)}>Elements</button>         
             </div>
             
           </div>

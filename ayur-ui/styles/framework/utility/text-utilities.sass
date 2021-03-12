@@ -1,4 +1,5 @@
-@use "./../variables"
+@use "../variables"
+@use "../mixins"
 @use "sass:map"
 \:root
   // --font-xs: 1rem
@@ -7,7 +8,7 @@
   // --font-lg: 2rem
   // --font-xl: 2.4rem
   // --font-xxl: 3rem  
-  --font-default: #{map.get(variables.$typoScale, "base")}rem
+  --font-default: #{map.get(variables.$contentTypoScale, "base")}rem
 .font-default 
   font-size: var(--font-default)
 .small
@@ -28,6 +29,8 @@
   text-align: left 
 .text-right 
   text-align: right
+.text-ellipsis
+  +mixins.ellipsis()
 .weight-superbold
   font-weight: var(--weight-superbold, 800) !important  
 .weight-bold, strong, b
@@ -62,7 +65,8 @@
   color: var(--color-link)
   cursor: pointer
   &:hover 
-    color: var(--hover-color, var(--color-link))   
+    color: var(--hover-color, var(--color-link))
 @each $size, $i in variables.$contentFontSizesMap
   .font-#{$size}
     font-size: var(--font-#{$size}) !important
+     

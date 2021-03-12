@@ -4,7 +4,7 @@
   --font-family-button: var(--font-family-main, sans-serif) 
 button, .btn
   user-select: none
-  --icon-size: 1.6rem
+  //--icon-size: 1.6rem
   margin: 0
   display: inline-flex
   align-items: center
@@ -18,7 +18,7 @@ button, .btn
   border-radius: var(--border-radius, 0rem)
   text-decoration: none
   outline: none
-  transition: var(--transition, all 0s linear)
+  transition: var(--transition)
   cursor: pointer
   vertical-align: bottom  
   font-family: var(--button-font-family, sans-serif) 
@@ -46,7 +46,7 @@ button, .btn
 .btn-icon
   --button-padding: 0
   --button-bg: transparent
-  --icon-size: 1.6rem
+  //--icon-size: 1.6rem
   height: calc(var(--button-line-height, 4rem))
   width: calc(var(--button-line-height, 4rem))  
 .btn-link 
@@ -125,5 +125,6 @@ button, .btn
   --button-line-height: 2rem
 .btn-inline 
   min-width: 1px
-  width: auto      
+  width: auto    
+  --button-line-height: 1  
   
