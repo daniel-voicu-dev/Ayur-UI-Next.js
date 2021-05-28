@@ -4,6 +4,7 @@ import Head from 'next/head'
 import BaseLayout from '../components/BaseLayout'
 import Heading from '../components/Heading'
 import Container from '../components/Container'
+import Banner from "../components/Banner"
 import ContentCustom from '../components/Content'
 //import image from "../public/assets/img/banner-demo.jpg"
 
@@ -135,6 +136,13 @@ const banner = () => {
           </div>
         </div>
       </div>
+      <Container container="container" cssClass="mt-4">
+        <Banner>
+          <Heading style="hr2" weight="superbold" cssClass="mb-2">Nam volutpat pellent ante non tristique</Heading>
+          <ContentCustom><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa dolor, auctor ut lacus quis, elementum efficitur est. Vestibulum a nulla gravida, pretium elit at, tristique nisl. Duis vestibulum sapien urna, sit amet blandit tortor convallis ut. Nullam quis blandit ipsum. Nam neque tortor, pharetra eu urna sit amet, tristique aliquet enim. Curabitur finibus ut erat auctor fermentum. Cras ex orci, scelerisque ut nisi et, sagittis egestas augue.</p></ContentCustom>
+          <button type="button" className="btn-border--light mt-2">Find out more</button>
+        </Banner>
+      </Container>  
       </BaseLayout>
     </div>
   )

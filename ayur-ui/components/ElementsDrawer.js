@@ -7,7 +7,7 @@ const ElementsDrawer = (props,ref) => {
     <Drawer ref={ref}>
       <div className={styles.drawer__elements}>        
           <h3 className={styles.heading}>Elements</h3>
-          <Link href="/banner">
+          <Link href="/banner-v2">
             <a>Banner</a>
           </Link>
           <Link href="/paragraph">
