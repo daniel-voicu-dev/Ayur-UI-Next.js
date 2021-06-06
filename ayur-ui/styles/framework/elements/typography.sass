@@ -27,7 +27,7 @@ p
     margin: 0
     @if $i >= 0
       line-height: 1.2
-      font-size: clamp(#{($mobileBase * math.pow($mobileRatio, $i))}#{"rem"}, #{$headingBase * math.pow($contentRatio,$i)}#{"rem"}, #{math.div(($headingBase * math.pow($headingRatio,$i))*1000,$headingSizeThreshold)}#{"vw"})
+      font-size: clamp(#{($mobileBase * math.pow($mobileRatio, $i))}#{"rem"}, #{$headingBase * math.pow($headingRatio,$i)}#{"rem"}, #{math.div(($headingBase * math.pow($headingRatio,$i))*1000,$headingSizeThreshold)}#{"vw"})
     @else 
       font-size: clamp(#{math.min($mobileBase * math.pow($mobileRatio, $i),$headingBase * math.pow($headingRatio,$i))}#{"rem"}, #{$headingBase * math.pow($headingRatio,$i)}#{"rem"}, #{math.div(($headingBase * math.pow($headingRatio,$i))*1000,$headingSizeThreshold)}#{"vw"})  
     
