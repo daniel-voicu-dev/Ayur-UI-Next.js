@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 import styles from "./../styles/Container.module.sass"
-const Container = ({children, container, cssClass, cssClassContent,edit}) => {
+const Container = ({children, container, cssClass, cssClassContent, edit}) => {
   let [localContainer, setLocalContainer] = useState("container");
   let [config,setConfig] = useState(false)
   let [localEdit, setLocalEdit] = useState(false)
@@ -9,7 +9,8 @@ const Container = ({children, container, cssClass, cssClassContent,edit}) => {
         setLocalContainer(container);
     }
     setLocalEdit(edit ?? false);
-  }, [])  
+  }, [container,edit])  
+ 
   return(
     <section className={`section__container ${cssClass ?? ""} ${localContainer === "container" ? "container" : `container--${localContainer}`}`}>      
       <div className={`section__content relative ${config ? styles.border : "" } ${cssClassContent??""}`}>
