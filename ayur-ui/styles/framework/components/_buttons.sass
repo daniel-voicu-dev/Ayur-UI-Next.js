@@ -1,0 +1,164 @@
+﻿@use '../abstracts' as *
+@use 'sass:color'
+
+$neutralbuttons: (dark: ("dark","muted"),light:("light","neutral","neutral-light"))
+$buttonsizes: ("sm": 3.2rem, "md": 4rem, "lg" : 4.8rem, "xl": 5.2rem)
+
+\:root
+  --font-family-button: var(--font-family-main, sans-serif)
+button, .btn
+  --icon-size: var(--icon-size-md, 1.6rem)
+  user-select: none
+  margin: 0
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  line-height: calc(var(--button-line-height, 4rem) - 2*var(--button-border-size, 0rem))
+  border: var(--button-border-size, 0rem) solid var(--button-border-color, gray)
+  min-width: var(--button-line-height, 4rem)
+  padding: 0 var(--button-padding, 2rem)
+  background: var(--button-bg, gray)
+  color: var(--button-color, var(--color-content))
+  border-radius: var(--border-radius, 0rem)
+  text-decoration: none
+  outline: none
+  transition: var(--transition)
+  cursor: pointer
+  vertical-align: bottom
+  font-family: var(--button-font-family)
+  &:hover
+    background: var(--button-bg-hover, var(--button-bg))
+    color: var(--button-color-hover, var(--button-color))
+    border-color: var(--button-border-color-hover, var(--button-border-color))
+    --icon-color: var(--button-color-hover, var(--button-color))
+  .icon
+    display: inline-flex
+    align-items: center
+    justify-content: center
+  &[icon-position="left"]
+    span:not(.icon)
+      order: 2
+    .icon
+      order: 1
+      margin-right: var(--buttion-icon-spacing, 0.5rem)
+  &[icon-position="right"]
+    span:not(.icon)
+      order: 1
+    .icon
+      order: 2
+      margin-left: var(--buttion-icon-spacing, 0.5rem)
+  &.disabled
+    opacity: 0.2
+    cursor: not-allowed    
+.btn
+  &-icon
+    --button-padding: 0
+    --button-bg: transparent
+    --icon-size: var(--icon-size-md, 1.6rem)
+    height: calc(var(--button-line-height, 4rem))
+    width: calc(var(--button-line-height, 4rem))
+  &-link
+    height: unset
+    width: unset
+    line-height: inherit
+    --button-bg: transparent
+    --button-bg-hover: transparent
+    --button-padding: 0rem
+    min-width: unset
+  &-inline
+    min-width: 1px
+    width: auto
+    --button-line-height: 1
+  @each $key,$value in $buttonsizes  
+    &-#{$key}
+      --button-line-height: #{$value}
+      --button-padding: #{$value/2}  
+  
+@each $key, $value in $colors
+  .btn-fill--#{$key}
+    --button-bg: var(--color-#{$key})
+    @if color.lightness($value) > 75%      
+      --button-bg-hover: var(--color-hue-#{$key}-400)
+      --button-color: var(--color-dark)
+      --button-color-hover: var(--color-dark)
+      --icon-color: var(--color-dark)
+      &:hover
+        --icon-color: var(--color-dark)
+    @else     
+      --button-bg-hover: var(--color-hue-#{$key}-600)
+      --button-color: var(--color-light)
+      --button-color-hover: var(--color-light)
+      --icon-color: var(--color-light)
+      &:hover
+        --icon-color: var(--color-light)
+    .ico
+      --transition: unset
+  .btn-border--#{$key}
+    --button-bg: transparent
+    --button-bg-hover: var(--color-#{$key})
+    --button-color:  var(--color-#{$key})
+    --button-border-size: var(--border-size, 0.1rem)
+    --button-border-color: var(--color-#{$key})
+    --button-border-color-hover: var(--color-#{$key})
+    --icon-color: var(--color-#{$key})
+    @if color.lightness($value) > 75% 
+      --button-color-hover: var(--color-dark)
+    @else      
+      --button-color-hover: var(--color-light)
+    .ico
+      --transition: unset
+  .btn-icon--#{$key}  
+    --button-bg: transparent 
+    --button-bg-hover: transparent
+    --icon-color: var(--color-#{$key})
+    --icon-size: var(--icon-xxl)
+    --button-padding: 0
+    height: var(--button-line-height, 4rem)
+    &:hover
+      @if color.lightness($value) > 75%      
+        --icon-color: var(--color-hue-#{$key}-400)
+      @else
+        --icon-color: var(--color-hue-#{$key}-600)
+@each $key, $value in $neutralbuttons
+  @each $key1 in $value
+    .btn-fill--#{$key1}    
+      --button-bg: var(--color-#{$key1})
+      --button-bg-hover: var(--color-dark)
+      @if $key == dark
+        --button-color: var(--color-light)
+        --icon-color: var(--color-light)        
+      @else
+        --button-color: var(--color-dark)
+        --icon-color: var(--color-dark)
+      --button-color-hover: var(--color-light)
+      &:hover
+        --icon-color: var(--color-light)
+      .ico
+        --transition: unset
+    .btn-border--#{$key1}
+      --button-bg: transparent
+      --button-bg-hover: var(--color-#{$key1})
+      --button-color:  var(--color-#{$key1})
+      --button-border-size: var(--border-size, 0.1rem)
+      --button-border-color: var(--color-#{$key1})
+      --button-border-color-hover: var(--color-#{$key1})
+      --icon-color: var(--color-#{$key1})
+      @if $key == dark
+        --button-color-hover: var(--color-light)        
+      @else
+        --button-color-hover: var(--color-dark)
+      .ico
+        --transition: unset
+    .btn-icon--#{$key1}
+      --button-bg: transparent
+      --button-bg-hover: transparent
+      --icon-color: var(--color-#{$key1})
+      --icon-size: var(--icon-xxl)
+      --button-padding: 0
+      height: var(--button-line-height, 4rem)
+      &:hover
+        @if $key == dark
+          --icon-color: var(--color-hue-#{$key1}-600)            
+        @else
+          --icon-color: var(--color-hue-#{$key1}-400)
+                

@@ -9,8 +9,8 @@ import ContentCustom from '../components/Content'
 
 
 const layout = () => {
-  let [columns, setColumns] = useState("4");
-  let [gap,setGap] = useState("2");
+  let [columns, setColumns] = useState(4);
+  let [gap,setGap] = useState(3);
   let [container,setContainer] = useState('wide');
   let [col,setCol] = useState(4) 
   return (
@@ -19,21 +19,33 @@ const layout = () => {
         <title>Commergent UI | Layout</title>
       </Head>
       <BaseLayout>
-        <Container container="narrow">
-          <Heading style="hr1" weight="superbold" cssClass="w-100 my-3">The <span className='color-brand'>Layout</span></Heading>
+        <Container container="narrow" cssClass="my-5">
+          <Heading style="hr1" weight="superbold" cssClass="w-100">The <span className='color-brand'>Layout</span></Heading>
         </Container>
-        <Container container="narrow">
-          <Heading style="h1" weight="bold" cssClass="w-100 my-3">Section/Container</Heading>
+        <Container container="narrow" cssClass="mt-5 mb-3">
+          <Heading style="h1" weight="superbold" cssClass="w-100">The <span className='color-brand'>Container</span></Heading>
+          <ContentCustom size="xl" cssClass="my-3">
+            <p>Future proofing with CSS Grid.</p>
+            <p>Image/Color/Video extensibility available.</p>
+            <p>Easy to use <a href="https://sass-lang.com/" target="_blank">SASS</a> customization.</p>
+          </ContentCustom>
         </Container>
-        <Container cssClass={'mb-4'} container="wide" cssClassContent={'flex-wrap align-items-center justify-content-center font-lg color-light bg-brand  ' + styles.height} style={'height: 10rem;'}>Container Wide</Container>
-        <Container cssClass={'mb-4'} cssClassContent={'flex-wrap align-items-center justify-content-center font-lg color-light bg-brand  ' + styles.height} style={'height: 10rem;'}>Container</Container>
-        <Container cssClass={'mb-4'} container="narrow" cssClassContent={'flex-wrap align-items-center justify-content-center font-lg color-light bg-brand  ' + styles.height} style={'height: 10rem;'}>Container Narrow/Text</Container>        
-        <Container cssClass={'mb-4'} container={container} cssClassContent={'flex-wrap align-items-center justify-content-center font-lg color-light bg-accent ' + styles.height} style={'height: 10rem;'}>          
+        
+       
+        <Container cssClass={'mb-3'} container="wide" cssClassContent={'flex-wrap align-items-center justify-content-center  ' + styles.container} style={'height: 10rem;'}>Container Wide</Container>
+        <Container cssClass={'mb-3'} cssClassContent={'flex-wrap align-items-center justify-content-center  ' + styles.container} style={'height: 10rem;'}>Container</Container>
+        <Container cssClass={'mb-3'} container="narrow" cssClassContent={'flex-wrap align-items-center justify-content-center  ' + styles.container} style={'height: 10rem;'}>Container Narrow/Text</Container>
+        <Container container="narrow" cssClass="mt-5">
+          <Heading style="h2" weight="bold" cssClass="w-100 color-accent">Demo</Heading>
+        </Container>
+        <Container cssClass={'mt-2 mb-4'} container={container}>         
+        <div className={'flex-wrap align-items-center justify-content-center ' + styles.container__demo}>  
           <select onChange={e=>setContainer(e.target.value)} defaultValue={container}>
             <option value='wide'>Wide</option>
             <option value='container'>Container</option>
             <option value='narrow'>Container Narrow/Text</option>
           </select>
+        </div>  
         </Container>
         <Container container="narrow">
           <div className="html-code">
@@ -46,9 +58,21 @@ const layout = () => {
 `}</code></pre>
           </div>
         </Container>
-        <Container container="narrow">
-          <Heading style="h1" weight="bold" cssClass="w-100 my-3">Grid</Heading>          
-          <div className={'my-3 child-mr-2'}>
+        <Container container="narrow" cssClass="my-5">
+          <Heading style="h2" weight="superbold" cssClass="w-100 mb-3">The <span className='color-brand'>Grid</span></Heading>
+          <ContentCustom size="xl" cssClass="my-3">
+            <p>Future proofing with CSS Grid.</p>
+            <p>Highly customizable.</p>
+            <p>CSS Variable custom grid with no fixed amount of columns: --grid-cols: 4</p>
+          </ContentCustom>
+          <div className={'grid-1 grid-xs-2 grid-lg-4 gap-3 mb-3 ' + styles.card__container}>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+          </div>
+          <Heading style="h2" weight="bold" cssClass="w-100 mb-2 color-accent mt-5">Demo</Heading>
+          <div className={'mb-2 child-mr-2'}>
             <div className={'w-100'}><p>Grid container class: <strong>grid-1 grid-sm-2 grid-md-3 <span className={'color-accent'}>grid-lg-{columns} grid-xl-{columns} grid-xxl-{columns} gap-{gap}</span></strong></p></div>
             <select id="columns" className="color-accent" onChange={e=>setColumns(e.target.value)} defaultValue={columns}>
               <option value={1}>Grid Columns: 1</option>
@@ -72,8 +96,8 @@ const layout = () => {
               <option value={5}>Gap: 5</option>              
             </select>
           </div>
-          <div className={`grid-1 grid-sm-2 grid-md-3 grid-lg-${columns} gap-${gap} mt-3`}>
-            <div className={'p-3 border ' + styles.card + " " + `col-1 col-md-3 col-lg-${col}`}>
+          <div className={`grid-1 grid-sm-2 grid-md-3 grid-lg-${columns} gap-${gap} mt-3 ` + styles.card__container}>
+            <div className={styles.card__demo + " " + `col-1 col-md-3 col-lg-${col}`}>
               <div>.col-1 .col-md-3 .col-lg-<span className="color-accent">{col}</span></div>
               <div className="flex-wrap mt-1">                
                 <select id="col" className="color-accent" onChange={e=>setCol(e.target.value)} defaultValue={4}>
@@ -85,17 +109,17 @@ const layout = () => {
               </div>
               
             </div>
-            <div className={'p-3 col-md-2 col-lg-1 border ' + styles.card}>.col-md-2 col-lg-1</div>
-            <div className={'p-3 col-md-1 col-lg-1 border ' + styles.card}>.col-md-1 col-lg-1</div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>
-            <div className={'p-3 border ' + styles.card}>.col <span className="color-muted">[optional]</span></div>            
+            <div className={'col-md-2 col-lg-1 ' + styles.card}>.col-md-2 col-lg-1</div>
+            <div className={'col-md-1 col-lg-1 ' + styles.card}>.col-md-1 col-lg-1</div>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+            <div className={styles.card}></div>
+            {/*<div className={styles.card}></div>*/}
+            {/*<div className={styles.card}></div>*/}
+            {/*<div className={styles.card}></div>            */}
           </div>
           
         </Container>

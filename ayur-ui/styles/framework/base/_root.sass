@@ -1,0 +1,92 @@
+﻿@use "sass:color"
+@use '../abstracts' as *
+
+\:root
+  --scrollbar-width: calc(100vw - 100%)
+
+\:root  
+  @each $key,$value in $colors
+    --color-#{$key}: #{$value}
+  --color-light: hsl(100,100%,100%)
+  --color-dark: hsl(0,0%,0%)
+  --color-alert: var(--color-dark)
+  @each $key,$value in $colors
+    @for $i from 1 to 5
+      --color-hue-#{$key}-#{$i}00: #{color.mix(white, $value, 100%-$i*20%)}
+    @for $i from 5 to 0
+      --color-hue-#{$key}-#{10-$i}00: #{color.mix(black, $value, 100%-$i*20%)}
+  @for $i from 1 to 10
+    --color-gray-#{$i}00: #{color.adjust($gray, $lightness: 100%-$i*10%)}
+  --color-content: var(--color-dark, black) 
+  --color-border: var(--color-gray-200, gray)  
+  --color-muted: var(--color-gray-500, darkgray)
+  --color-neutral: var(--color-gray-200, gray)
+  --color-neutral-light: var(--color-gray-100, lightgray)
+html
+  font-size: 10px
+body
+  margin: 0
+  padding: 0
+  font: var(--font-stack-main)
+  line-height: 1.4
+%link
+  transition: var(--transition)
+  color: var(--color-brand, blue)
+  --icon-color: var(--color-brand, blue)
+  &:hover
+    color: var(--color-hue-brand-400)
+    --icon-color: var(--color-hue-brand-400)
+  //&:visited
+  //  color: var(--color-brand, blue)
+  //  --icon-color: var(--color-brand, blue)
+a  
+  display: inline-flex
+  flex-wrap: wrap
+  align-items: center  
+  @extend %link
+  nav &
+    text-decoration: none     
+    color: var(--color-cotent)
+img
+  display: block
+  max-width: 100%
+  height: auto
+  object-fit: contain
+input, select, textarea, blockquote
+  font: var(--font-stack-main)
+input
+  border-radius: 0
+  padding: 0 1rem
+  line-height: var(--form-line-height, 4rem)
+  outline: none
+  border: 1px solid var(--color-dark)
+  &:focus
+    box-shadow: 0 0 3px 0 #ddd
+
+.ico
+  width: var(--icon-size, 1.6rem)
+  height: var(--icon-size, 1.6rem)
+  display: inline-flex
+  flex-wrap: wrap
+  color: var(--icon-color, var(--color-content))
+  fill: var(--icon-color, var(--color-content))
+  transition: var(--transition)
+  &:hover
+    color: var(--icon-color-hover, var(--icon-color, inherit))
+    fill: var(--icon-color-hover, var(--icon-color, inherit))
+ul
+  margin: 0
+  padding-left: 2rem
+  nav &
+    list-style-type: none
+    padding: 0
+svg
+  display: block
+  width: 100%
+  height: 100%
+  > *
+    transition: fill 0.05s ease-in-out, stroke 0.1s ease-in-out    
+    
+    
+    
+  

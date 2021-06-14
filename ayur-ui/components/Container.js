@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 import styles from "./../styles/Container.module.sass"
-const Container = ({children, container, cssClass, cssClassContent, edit}) => {
+const Container = ({children, container, cssClass, cssClassContent, edit, backdrop}) => {
   let [localContainer, setLocalContainer] = useState("container");
   let [config,setConfig] = useState(false)
   let [localEdit, setLocalEdit] = useState(false)
@@ -29,6 +29,10 @@ const Container = ({children, container, cssClass, cssClassContent, edit}) => {
         
         {children}
       </div>
+      {backdrop &&
+        <div className="section__backdrop"></div>
+      }
+      
     </section>
   )
 }

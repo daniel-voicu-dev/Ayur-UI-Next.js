@@ -1,0 +1,38 @@
+﻿@use "../abstracts" as *
+$textcolors: "light","dark","content", "muted", "neutral", "neutral-light", "border"
+
+@each $key,$value in $colors
+  .color-#{$key}
+    color: var(--color-#{$key})
+    --icon-color: var(--color-#{$key})
+    a#{&}
+      color: var(--color-#{$key})
+  .bg-#{$key}
+    background: var(--color-#{$key})
+  .border-#{$key}
+    border-color: var(--color-#{$key}) 
+  .hover-#{$key}
+    &:hover
+      color: var(--color-#{$key})
+      --icon-color: var(--color-#{$key})
+    a#{&}:hover  
+      color: var(--color-#{$key})
+@each $key in $textcolors
+  .color-#{$key}
+    color: var(--color-#{$key})
+    --icon-color: var(--color-#{$key})
+    a#{&}
+      color: var(--color-#{$key})
+  .bg-#{$key}
+    background: var(--color-#{$key})
+  .border-#{$key}
+    border-color: var(--color-#{$key})
+  .hover-#{$key}
+    &:hover
+      color: var(--color-#{$key})
+      --icon-color: var(--color-#{$key})
+    a#{&}:hover
+      color: var(--color-#{$key})
+
+  
+  
