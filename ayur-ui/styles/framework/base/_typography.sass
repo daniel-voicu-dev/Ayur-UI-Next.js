@@ -1,14 +1,5 @@
 ﻿@use '../abstracts' as *
 @use "sass:math"
-@use "sass:map"
-
-$headingSizeThreshold: 1024
-$mobileBase: map.get($mobileHeadingScale, "base")
-$mobileRatio: map.get($mobileHeadingScale, "ratio")
-$contentBase: map.get($contentScale, "base")
-$contentRatio: map.get($contentScale, "ratio")
-$headingBase: map.get($headingScale, "base")
-$headingRatio: map.get($headingScale, "ratio")
 
 \:root
   --font-family-main: "Hind Madurai", sans-serif
@@ -16,6 +7,11 @@ $headingRatio: map.get($headingScale, "ratio")
   --font-family-hero: var(--font-family-headings)
   --font-family-headings-secondary: "Lora", serif
   --font-stack-main: 400 1.6rem/1.4 var(--font-family-main, sans-serif)
+  @each $name,$i in $contentFontSizesMap
+    @if $i >= 0
+      #{--font-}#{$name}: clamp(#{($mobileBase * math.pow($mobileRatio, $i))}#{"rem"} , #{$headingBase * math.pow($contentRatio,$i)}#{"rem"},  #{math.div(($contentBase * math.pow($contentRatio,$i))*1000,$headingSizeThreshold)}#{"vw"})
+    @else
+      #{--font-}#{$name}: clamp(#{math.min(math.div($mobileBase * 1, math.pow($mobileRatio,math.abs($i))), math.div($contentBase * 1, math.pow($contentRatio,math.abs($i))))}#{"rem"} , #{math.div($contentBase * 1 , math.pow($contentRatio,math.abs($i)))}#{"rem"},  #{math.div((($contentBase * math.pow($contentRatio,math.abs($i)))*1000),$headingSizeThreshold)}#{"vw"})
 p
   margin: 0 0 0.5rem
 @for $i from -1 through 4
@@ -40,15 +36,5 @@ p
     @else
       font-size: clamp(#{math.div($mobileBase * 1, math.pow($mobileRatio, $i))}#{"rem"} , #{math.div($headingBase * 1 , math.pow($headingRatio,$i))}#{"rem"},  #{math.div(($headingBase * math.pow($headingRatio,$i))*1000,$headingSizeThreshold)}#{"vw"})
 
-\:root
-  @each $name,$i in $contentFontSizesMap
-    @if $i >= 0
-      #{--font-}#{$name}: clamp(#{($mobileBase * math.pow($mobileRatio, $i))}#{"rem"} , #{$headingBase * math.pow($contentRatio,$i)}#{"rem"},  #{math.div(($contentBase * math.pow($contentRatio,$i))*1000,$headingSizeThreshold)}#{"vw"})
-    @else
-      #{--font-}#{$name}: clamp(#{math.min(math.div($mobileBase * 1, math.pow($mobileRatio,math.abs($i))), math.div($contentBase * 1, math.pow($contentRatio,math.abs($i))))}#{"rem"} , #{math.div($contentBase * 1 , math.pow($contentRatio,math.abs($i)))}#{"rem"},  #{math.div((($contentBase * math.pow($contentRatio,math.abs($i)))*1000),$headingSizeThreshold)}#{"vw"})
-\:root
-  @each $name,$i in $contentFontSizesMap
-    @if $i >= 0
-      #{--icon-}#{$name}: clamp(#{($mobileBase * math.pow(1.25, $i))}#{"rem"} , #{$contentBase * math.pow(1.25,$i)}#{"rem"},  #{math.div(($contentBase * math.pow(1.25,$i))*1000,$headingSizeThreshold)}#{"vw"})
-    @else
-      #{--icon-}#{$name}: clamp(#{(math.min(math.div($mobileBase * 1,math.pow(1.25, math.abs($i))), math.div($contentBase * 1 , math.pow(1.25,math.abs($i))) ))}#{"rem"} , #{math.div($contentBase * 1 , math.pow(1.25,math.abs($i)))}#{"rem"},  #{math.div($contentBase * math.pow(1.25,math.abs($i))*1000,$headingSizeThreshold)}#{"vw"})        
+
+  

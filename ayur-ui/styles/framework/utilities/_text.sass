@@ -1,0 +1,65 @@
+﻿@use '../abstracts' as *
+.font-heading
+  font-family: var(--font-family-headings, san-serif)
+.font-hero
+  font-family: var(--font-family-heroheadings, var(--font-family-headings))
+  font-weight: 900
+.font-subheading
+  font-family: var(--font-family-headings-secondary, var(--font-family-headings))
+.font-condensed
+  font-family: var(--font-condensed, var(--font-family-main))
+.font-regular
+  font-family: var(--font-regular, var(--font-family-main))
+.weight-superbold
+  font-weight: var(--weight-superbold, 800)
+.weight-bold, strong, b
+  font-weight: var(--weight-bold, 700)
+.weight-normal
+  font-weight: var(--weight-normal, 400)
+.weight-thin
+  font-weight: var(--weight-thin, 300)
+.weight-superthin
+  font-weight: var(--weight-superthin, 100)
+.line-height-2
+  line-height: 2
+.line-height-1
+  line-height: 1
+.letter-spacing
+  letter-spacing: var(--letter-spacing, 0.1rem)
+small
+  font-size: var(--font-sm, 0.85em)
+.text-line-through
+  text-decoration: line-through
+.text-underline
+  text-decoration: underline
+.text-decoration-none
+  text-decoration: none !important
+.text-uppercase
+  text-transform: uppercase
+.text-lowercase
+  text-transform: lowercase
+.text-center
+  text-align: center
+.text-left
+  text-align: left
+.text-right
+  text-align: right
+.text-ellipsis
+  +ellipsis()
+.link
+  display: inline-flex
+  align-items: center
+  text-decoration: underline  
+  cursor: pointer
+  @extend %link
+.no-select
+  user-select: none
+.pointer
+  cursor: pointer
+.not-allowed
+  cursor: not-allowed
+@each $size,$i in $contentFontSizesMap
+  .font-#{$size}
+    font-size: var(--font-#{$size})
+  
+  

@@ -1,6 +1,6 @@
 ﻿@use "sass:color"
 @use '../abstracts' as *
-
+@use "sass:math"
 \:root
   --scrollbar-width: calc(100vw - 100%)
 
@@ -22,6 +22,12 @@
   --color-muted: var(--color-gray-500, darkgray)
   --color-neutral: var(--color-gray-200, gray)
   --color-neutral-light: var(--color-gray-100, lightgray)
+\:root
+  @each $name,$i in $contentFontSizesMap
+    @if $i >= 0
+      #{--icon-}#{$name}: clamp(#{($mobileBase * math.pow(1.25, $i))}#{"rem"} , #{$contentBase * math.pow(1.25,$i)}#{"rem"},  #{math.div(($contentBase * math.pow(1.25,$i))*1000,$headingSizeThreshold)}#{"vw"})
+    @else
+      #{--icon-}#{$name}: clamp(#{(math.min(math.div($mobileBase * 1,math.pow(1.25, math.abs($i))), math.div($contentBase * 1 , math.pow(1.25,math.abs($i))) ))}#{"rem"} , #{math.div($contentBase * 1 , math.pow(1.25,math.abs($i)))}#{"rem"},  #{math.div($contentBase * math.pow(1.25,math.abs($i))*1000,$headingSizeThreshold)}#{"vw"})
 html
   font-size: 10px
 body
@@ -29,16 +35,6 @@ body
   padding: 0
   font: var(--font-stack-main)
   line-height: 1.4
-%link
-  transition: var(--transition)
-  color: var(--color-brand, blue)
-  --icon-color: var(--color-brand, blue)
-  &:hover
-    color: var(--color-hue-brand-400)
-    --icon-color: var(--color-hue-brand-400)
-  //&:visited
-  //  color: var(--color-brand, blue)
-  //  --icon-color: var(--color-brand, blue)
 a  
   display: inline-flex
   flex-wrap: wrap
@@ -85,7 +81,19 @@ svg
   width: 100%
   height: 100%
   > *
-    transition: fill 0.05s ease-in-out, stroke 0.1s ease-in-out    
+    transition: fill 0.05s ease-in-out, stroke 0.1s ease-in-out
+.lazyload,.lazyloading
+  opacity: 0
+.lazyloaded
+  opacity: 1
+  transition: opacity 75ms ease-in
+img.lazyload:not([src])
+  visibility: hidden
+.transition
+  transition: var(--transition, unset)
+.box-shadow
+  --box-shadow: 0 0 50px #00000021
+  box-shadow: var(--box-shadow, unset)    
     
     
     

@@ -1,0 +1,23 @@
+﻿@use '../abstracts' as *
+
+//columns        
+@for $i from 1 through $grid-columns
+  .col-#{$i}
+    grid-column: span #{$i}    
+//columns with breakpoints    
+@each $key, $value in $breakpoints
+  @for $i from 1 through $grid-columns
+    .col-#{$key}-#{$i}
+      +breakpoint($key)
+        grid-column: span #{$i}
+//grid gap
+@each $key, $value in $spacings
+  .gap-#{$key}
+    --grid-gap: calc(#{$value} * var(--spacing-unit, 0.5rem))
+//grid gap with breakpoints      
+@each $key, $value in $spacings
+  @each $key2, $value2 in $breakpoints
+    .gap-#{$key2}-#{$key}
+      +breakpoint($key)
+        --grid-gap: calc(#{$value} * var(--spacing-unit, 0.5rem)) 
+     

@@ -19,28 +19,20 @@ const layout = () => {
         <title>Commergent UI | Layout</title>
       </Head>
       <BaseLayout>
-        <Container container="narrow" cssClass="my-5">
+        <Container container="narrow" cssClass="my-3">
           <Heading style="hr1" weight="superbold" cssClass="w-100">The <span className='color-brand'>Layout</span></Heading>
         </Container>
         <Container container="narrow" cssClass="mt-5 mb-3">
-          <Heading style="h1" weight="superbold" cssClass="w-100">The <span className='color-brand'>Container</span></Heading>
-          <ContentCustom size="xl" cssClass="my-3">
-            <p>Future proofing with CSS Grid.</p>
-            <p>Image/Color/Video extensibility available.</p>
-            <p>Easy to use <a href="https://sass-lang.com/" target="_blank">SASS</a> customization.</p>
-          </ContentCustom>
+          <Heading style="hr2" weight="superbold" cssClass="w-100">The Container</Heading>          
         </Container>
         
        
         <Container cssClass={'mb-3'} container="wide" cssClassContent={'flex-wrap align-items-center justify-content-center  ' + styles.container} style={'height: 10rem;'}>Container Wide</Container>
         <Container cssClass={'mb-3'} cssClassContent={'flex-wrap align-items-center justify-content-center  ' + styles.container} style={'height: 10rem;'}>Container</Container>
-        <Container cssClass={'mb-3'} container="narrow" cssClassContent={'flex-wrap align-items-center justify-content-center  ' + styles.container} style={'height: 10rem;'}>Container Narrow/Text</Container>
-        <Container container="narrow" cssClass="mt-5">
-          <Heading style="h2" weight="bold" cssClass="w-100 color-accent">Demo</Heading>
-        </Container>
+        <Container cssClass={'mb-3'} container="narrow" cssClassContent={'flex-wrap align-items-center justify-content-center  ' + styles.container} style={'height: 10rem;'}>Container Narrow/Text</Container>       
         <Container cssClass={'mt-2 mb-4'} container={container}>         
         <div className={'flex-wrap align-items-center justify-content-center ' + styles.container__demo}>  
-          <select onChange={e=>setContainer(e.target.value)} defaultValue={container}>
+          <select onChange={e=>setContainer(e.target.value)} defaultValue={container} className="bg-light">
             <option value='wide'>Wide</option>
             <option value='container'>Container</option>
             <option value='narrow'>Container Narrow/Text</option>
@@ -59,7 +51,7 @@ const layout = () => {
           </div>
         </Container>
         <Container container="narrow" cssClass="my-5">
-          <Heading style="h2" weight="superbold" cssClass="w-100 mb-3">The <span className='color-brand'>Grid</span></Heading>
+          <Heading style="hr2" weight="superbold" cssClass="w-100 mb-3">The Grid</Heading>
           <ContentCustom size="xl" cssClass="my-3">
             <p>Future proofing with CSS Grid.</p>
             <p>Highly customizable.</p>

@@ -1,4 +1,4 @@
-@use "../mixins"
+﻿@use "../mixins"
 .section
   &__container
     display: grid
@@ -43,9 +43,9 @@
       grid-area: 1/2/-1/3
   &__content
     grid-area: content
-    padding: var(--container-top-spacing, 0rem) var(--grid-gap) var(--container-bottom-spacing, 0rem)    
+    padding: var(--container-top-spacing, 0rem) var(--grid-gap) var(--container-bottom-spacing, 0rem)
 .container
-  --container: calc(100vw - var(--scrollbar-width, 1.7rem)) 
+  --container: calc(100vw - var(--scrollbar-width, 1.7rem))
   +mixins.breakpoint(md)
     --container: calc(102.4rem - var(--scrollbar-width, 1.7rem))
   +mixins.breakpoint(lg)
@@ -56,20 +56,20 @@
     --container: calc(172.0rem - var(--scrollbar-width, 1.7rem))
   .section__content
     padding: 0 calc(2*var(--spacing-unit, 0.5rem))
-  &--narrow    
+  &--narrow
     --container: calc(100vw - var(--scrollbar-width, 1.7rem))
     +mixins.breakpoint(md)
       --container: calc(102.4rem - var(--scrollbar-width, 1.7rem))
     +mixins.breakpoint(lg)
-      --container: calc(108.0rem - var(--scrollbar-width, 1.7rem))    
+      --container: calc(108.0rem - var(--scrollbar-width, 1.7rem))
     .section__content
-      padding: 0 calc(2*var(--spacing-unit, 0.5rem))  
+      padding: 0 calc(2*var(--spacing-unit, 0.5rem))
   &--wide
     --container: calc(100vw - var(--scrollbar-width, 1.7rem))
     .section__content
       padding-left: 0
       padding-right: 0
-      
+
 pre
   display: block
   margin: 0

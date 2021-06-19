@@ -1,0 +1,4 @@
+﻿@use "../abstracts"
+@each $size, $i in $contentFontSizesMap
+  .icon-#{$size}
+    --icon-size: var(--icon-#{$size})

@@ -10,7 +10,7 @@ const Header = () => {
   // console.log(asPath.substring(1));
   return (
     <div>
-      <header id="header" className="sticky l-0 r-0 t-0 w-100 flex-wrap  py-1 border-bottom border-neutral-light bg-light">
+      <header id="header" className="sticky l-0 r-0 t-0 w-100 flex-wrap  py-1">
         <div className="section__container container">
           <div className="section__content">
           <div className="flex-wrap align-items-center child-mr-2">
@@ -23,7 +23,7 @@ const Header = () => {
                 </a>
               </Link>  
             </div>
-            <div className="font-xl">:{route}</div>
+            {/*<div className="font-xl">:{route}</div>*/}
           </div>
           
           </div>

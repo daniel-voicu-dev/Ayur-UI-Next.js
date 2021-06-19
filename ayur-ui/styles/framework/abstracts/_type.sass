@@ -1,5 +1,14 @@
-﻿$headingScale: (base:1.6, ratio: 1.333)
-$mobileHeadingScale: (base:1.6, ratio:1.067)
-$contentScale: (base:1.6, ratio:1.125)
+﻿@use "sass:map"
 
+$headingScale: (base:1.6, ratio: 1.333) !default
+$mobileHeadingScale: (base:1.6, ratio:1.067) !default
+$contentScale: (base:1.6, ratio:1.125) !default
 $contentFontSizesMap: ("xs":-2,"sm":-1,"md":0,"lg":1,"xl":2,"xxl":3)
+
+$headingSizeThreshold: 1024
+$mobileBase: map.get($mobileHeadingScale, "base")
+$mobileRatio: map.get($mobileHeadingScale, "ratio")
+$contentBase: map.get($contentScale, "base")
+$contentRatio: map.get($contentScale, "ratio")
+$headingBase: map.get($headingScale, "base")
+$headingRatio: map.get($headingScale, "ratio")
