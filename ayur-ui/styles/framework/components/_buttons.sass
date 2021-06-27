@@ -2,7 +2,7 @@
 @use 'sass:color'
 
 $neutralbuttons: (dark: ("dark","muted"),light:("light","neutral","neutral-light"))
-$buttonsizes: ("sm": 3.2rem, "md": 4rem, "lg" : 4.8rem, "xl": 5.2rem)
+$buttonsizes: ("xs": 2.4rem, "sm": 3.2rem, "md": 4rem, "lg" : 4.8rem, "xl": 5.2rem, "xxl": 6.4rem)
 
 \:root
   --font-family-button: var(--font-family-main, sans-serif)
@@ -73,6 +73,7 @@ button, .btn
     &-#{$key}
       --button-line-height: #{$value}
       --button-padding: #{$value/2}  
+      font-size: var(--font-#{$key})
   
 @each $key, $value in $colors
   .btn-fill--#{$key}

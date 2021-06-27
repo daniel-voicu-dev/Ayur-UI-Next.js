@@ -3,6 +3,13 @@
     background: #f7f2ff
     border: 1px solid #e5d5ff
     height: 20rem
+.config__inline
+  background: #fff
+  align-items: center
+  flex-wrap: wrap
+  z-index: 3
+  border: 1px dashed var(--color-gray-300)
+  border-top: 0
 .config
   background: #fff      
   box-shadow: 0px 8px 20px 0px #0b001a82  
@@ -21,6 +28,18 @@
     --icon-color: #0084ff 
     z-index: 2
     --icon-size: 2rem
+.input
+  border-left: 0 
+  border-right: 0 
+  border-top: 0
+  padding: 0
+  border-color: var(--color-gray-300)
+  transition: var(--transition)
+  width: 100%
+  border-style: dashed
+  &:focus
+    box-shadow: 20px 20px 20px 0px #0000000d
+    border-color: var(--color-gray-900)
 .ico
   --icon-color: #6e00ff
 .border

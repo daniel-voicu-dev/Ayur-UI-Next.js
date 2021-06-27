@@ -16,7 +16,7 @@ const typography = () => {
       </Head>
       <BaseLayout>
         <Container container="narrow">
-          <Heading style="hr1" weight="superbold" cssClass="w-100 my-3">The <span className='color-brand'>Typography</span></Heading>
+          <Heading style="hr1" weight="superbold" cssClass="w-100 my-3">The Typography</Heading>
         </Container>
         <Container container="narrow" cssClass="my-5" >
           <div className='p-5 p-lg-5 box-shadow'>
@@ -92,7 +92,7 @@ const typography = () => {
           </ContentCustom>
           <ContentCustom cssClass="my-3" size="xs">
             <p>.font-xs Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis non nisl in ultrices. Nullam mattis, arcu et ultrices volutpat, arcu ex viverra enim, ut venenatis nisl ligula eu leo. Ut sodales tortor sem, ac rhoncus leo ultricies eget. Duis varius, risus sit amet venenatis lobortis, odio lacus fermentum ipsum, vel elementum felis orci vitae ligula. Suspendisse suscipit nulla eu est aliquam porttitor. Fusce consectetur velit non enim elementum viverra. Duis vel mi vel felis malesuada porta. Maecenas eget commodo elit. Quisque venenatis nisi eget magna tristique molestie. Aliquam interdum mi fringilla mauris vestibulum, sed sagittis lorem malesuada. Aliquam in rutrum nisi. Fusce sollicitudin vestibulum tristique. Suspendisse eget quam felis.</p>
-          </ContentCustom>
+          </ContentCustom>        
           <Heading style="hr2" weight="superbold" cssClass="w-100 mb-3 mt-5">Utilities</Heading>
           <ContentCustom cssClass="my-3" size="">
             <p><span className="text-underline">text-underline</span> <span className="text-line-through">text-line-through</span> <span className="text-uppercase">text-uppercase</span>  <span className="text-lowercase">TEXT-LOWERCASE</span>  <span className="link text-decoration-none">text-decoration-none</span> <span className="text-ellipsis">text-ellipsis...</span> <span>text-left</span> <span>text-center</span> <span>text-right</span><br/><span className="weight-superthin font-heading">weight-superthin</span> <span className="weight-thin font-heading">weight-thin</span> <span className="weight-normal font-heading">weight-normal</span> <span className="weight-bold font-heading">weight-bold</span> <span className="weight-superbold font-heading">weight-superbold</span> <br/>

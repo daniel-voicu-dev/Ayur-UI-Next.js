@@ -10,10 +10,10 @@
   display: flex
 .flex-wrap
   display: flex
-  flex-wrap: wrap
+  flex-wrap: wrap  
 .grid
   display: grid
-  column-gap: var(--grid-gap, 0rem)
+  gap: var(--grid-gap, 0rem)
 //grid  
 @for $i from 1 through $grid-columns
   .grid-#{$i}
@@ -43,7 +43,7 @@
   .grid-#{$key}
     @media(min-width: #{$value})
       display: grid
-      column-gap: var(--grid-gap, 0rem)
+      gap: var(--grid-gap, 0rem)
 //grid with breakpoints    
 @each $key, $value in $breakpoints
   @for $i from 1 through $grid-columns
@@ -109,6 +109,13 @@
   .column-end-#{$i}
     grid-column-end: #{$i}    
     
-
+.columns--auto
+  display: grid 
+  grid-auto-flow: column
+.columns
+  display: grid 
+  grid-auto-flow: column  
+  justify-content: flex-start
+  gap: var(--grid-gap, calc(2*var(--spacing, 0.5rem)))
 
         

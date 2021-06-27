@@ -1,10 +1,9 @@
 ﻿import styles from "../styles/Grid.module.sass"
-import {useRef,useState} from 'react'
+import {useState} from 'react'
 import Head from 'next/head'
 import BaseLayout from '../components/BaseLayout'
 import Heading from '../components/Heading'
 import Container from '../components/Container'
-import Banner from "../components/Banner"
 import ContentCustom from '../components/Content'
 
 
@@ -20,7 +19,7 @@ const layout = () => {
       </Head>
       <BaseLayout>
         <Container container="narrow" cssClass="my-3">
-          <Heading style="hr1" weight="superbold" cssClass="w-100">The <span className='color-brand'>Layout</span></Heading>
+          <Heading style="hr1" weight="superbold" cssClass="w-100">The Layout</Heading>
         </Container>
         <Container container="narrow" cssClass="mt-5 mb-3">
           <Heading style="hr2" weight="superbold" cssClass="w-100">The Container</Heading>          
@@ -52,9 +51,7 @@ const layout = () => {
         </Container>
         <Container container="narrow" cssClass="my-5">
           <Heading style="hr2" weight="superbold" cssClass="w-100 mb-3">The Grid</Heading>
-          <ContentCustom size="xl" cssClass="my-3">
-            <p>Future proofing with CSS Grid.</p>
-            <p>Highly customizable.</p>
+          <ContentCustom size="xl" cssClass="my-3">           
             <p>CSS Variable custom grid with no fixed amount of columns: --grid-cols: 4</p>
           </ContentCustom>
           <div className={'grid-1 grid-xs-2 grid-lg-4 gap-3 mb-3 ' + styles.card__container}>
@@ -62,8 +59,7 @@ const layout = () => {
             <div className={styles.card}></div>
             <div className={styles.card}></div>
             <div className={styles.card}></div>
-          </div>
-          <Heading style="h2" weight="bold" cssClass="w-100 mb-2 color-accent mt-5">Demo</Heading>
+          </div>         
           <div className={'mb-2 child-mr-2'}>
             <div className={'w-100'}><p>Grid container class: <strong>grid-1 grid-sm-2 grid-md-3 <span className={'color-accent'}>grid-lg-{columns} grid-xl-{columns} grid-xxl-{columns} gap-{gap}</span></strong></p></div>
             <select id="columns" className="color-accent" onChange={e=>setColumns(e.target.value)} defaultValue={columns}>

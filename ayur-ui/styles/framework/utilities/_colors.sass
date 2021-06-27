@@ -17,6 +17,13 @@ $textcolors: "light","dark","content", "muted", "neutral", "neutral-light", "bor
       --icon-color: var(--color-#{$key})
     a#{&}:hover  
       color: var(--color-#{$key})
+  .bg-hover-#{$key}
+    &:hover
+      background: var(--color-#{$key})   
+      border-color: var(--color-#{$key})   
+    a#{&}:hover  
+      background: var(--color-#{$key}) 
+      border-color: var(--color-#{$key})   
 @each $key in $textcolors
   .color-#{$key}
     color: var(--color-#{$key})
@@ -33,6 +40,13 @@ $textcolors: "light","dark","content", "muted", "neutral", "neutral-light", "bor
       --icon-color: var(--color-#{$key})
     a#{&}:hover
       color: var(--color-#{$key})
+  .bg-hover-#{$key}
+    &:hover
+      background: var(--color-#{$key})      
+      border-color: var(--color-#{$key})         
+    a#{&}:hover  
+      background: var(--color-#{$key})    
+      border-color: var(--color-#{$key})       
 
   
   

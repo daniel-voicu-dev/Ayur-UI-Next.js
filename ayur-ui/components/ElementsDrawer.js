@@ -7,14 +7,28 @@ const ElementsDrawer = (props,ref) => {
     <Drawer ref={ref}>
       <div className={styles.drawer__elements}>
         <h3 className={styles.heading}>Base</h3>
+        <Link href="/colors">
+          <a>Colors</a>
+        </Link>        
         <Link href="/typography">
           <a>Typography</a>
-        </Link>
+        </Link> 
         <Link href="/layout">
-          <a>Layout</a>
-        </Link>
+            <a>Container & Grid</a>
+          </Link>
+        <h3 className={styles.heading}>Components</h3>          
+          <Link href="/buttons">
+            <a>Buttons</a>
+          </Link>
+          <Link href="/notifications">
+            <a>Notifications</a>
+          </Link>
+
         <h3 className={styles.heading}>Elements</h3>
         
+        <Link href="/banner-v2">
+          <a>Buttons</a>
+        </Link>
         <Link href="/banner-v2">
           <a>Banner</a>
         </Link>

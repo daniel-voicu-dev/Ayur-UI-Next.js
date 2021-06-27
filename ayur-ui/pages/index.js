@@ -35,6 +35,9 @@ export default function Home() {
               <Link href="/homepage">
                 <a className="btn btn-fill--brand border-pill">Demo</a>
               </Link>     
+              <Link href="/styleguide">
+                <a className="btn btn-fill--accent border-pill">Style Guide</a>
+              </Link>     
               <button type="button" className="btn-fill--muted border-pill" onClick={e=>handleElementsClick(e)}>Elements</button>         
             </div>
             
