@@ -191,7 +191,7 @@ const styleguide = () => {
               </ContentCustom>
             </div>
             <div className="p-3 border inline-flex flex-direction-column">              
-              <Heading style="h5" font="heading" weight="normal" cssClass="color-muted">Ancient Tales</Heading>
+              <Heading style="h5" font="heading" weight="normal">Ancient Tales</Heading>
               <Heading style="h2" font="heading" weight="bold" cssClass="mb-1">The Epic of Gilgamesh</Heading>            
               
               <ContentCustom>
@@ -208,7 +208,49 @@ const styleguide = () => {
                 the wall of the sacred Eanna Temple, the holy sanctuary.<br/>
                 Look at its wall which gleams like copper(?),<br/>
                 ...</p>
-                <a href="#">Read more</a>
+                <a href="#" className={'btn btn-fill--brand'}>Read more</a>
+              </ContentCustom>
+            </div>
+            <div className="p-3 border inline-flex flex-direction-column">
+              <Heading style="h2" font="heading" weight="superbold">Ancient Tales</Heading>
+              <Heading style="h3" font="subheading" weight="normal" cssClass="mb-1">The Epic of Gilgamesh</Heading>
+
+              <ContentCustom>
+                <p>He who has seen everything, I will make known (?) to the lands. <br/>
+                  I will teach (?) about him who experienced all things,<br/>
+                  ... alike,<br/>
+                  Anu granted him the totality of knowledge of all.<br/>
+                  He saw the Secret, discovered the Hidden,<br/>
+                  he brought information of (the time) before the Flood.<br/>
+                  He went on a distant journey, pushing himself to exhaustion,<br/>
+                  but then was brought to peace.<br/>
+                  He carved on a stone stela all of his toils,<br/>
+                  and built the wall of Uruk-Haven,<br/>
+                  the wall of the sacred Eanna Temple, the holy sanctuary.<br/>
+                  Look at its wall which gleams like copper(?),<br/>
+                  ...</p>
+                <a href="#" className={'btn btn-border--brand'}>Read more</a>
+              </ContentCustom>
+            </div>
+            <div className="p-3 border inline-flex flex-direction-column">
+              <Heading style="h2" font="heading" weight="bold">Ancient Tales</Heading>
+              <Heading style="h3" font="heading" weight="thin" cssClass="mb-1">The Epic of Gilgamesh</Heading>
+
+              <ContentCustom>
+                <p>He who has seen everything, I will make known (?) to the lands. <br/>
+                  I will teach (?) about him who experienced all things,<br/>
+                  ... alike,<br/>
+                  Anu granted him the totality of knowledge of all.<br/>
+                  He saw the Secret, discovered the Hidden,<br/>
+                  he brought information of (the time) before the Flood.<br/>
+                  He went on a distant journey, pushing himself to exhaustion,<br/>
+                  but then was brought to peace.<br/>
+                  He carved on a stone stela all of his toils,<br/>
+                  and built the wall of Uruk-Haven,<br/>
+                  the wall of the sacred Eanna Temple, the holy sanctuary.<br/>
+                  Look at its wall which gleams like copper(?),<br/>
+                  ...</p>
+                <a href="#" className={'btn btn-icon--brand'}><span className={'ico'}><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M268 112l144 144-144 144M392 256H100'/></svg></span></a>
               </ContentCustom>
             </div>
           </div>
