@@ -168,7 +168,42 @@ const styleguide = () => {
               </div>
             </div>
           </div>
-          <Heading style="hr2" weight="superbold" cssClass="mt-5 color-muted">Typography</Heading>
+          <Heading style="hr2" weight="superbold" cssClass="mt-5">Typography</Heading>
+          <Heading style="h2" font="subheading" weight="normal" cssClass="mt-5 mb-2">Hero Headings</Heading>
+          <Heading style="hr1" weight="superbold" cssClass="color-neutral-light text-uppercase my-3">Montserrat</Heading>
+          <Heading style="hr1" weight="superbold" cssClass="mb-2">The quick brown fox</Heading>
+          <Heading style="hr2" weight="superbold" cssClass="mb-2">The quick brown fox</Heading>
+          <Heading style="hr3" weight="superbold" cssClass="mb-2">The quick brown fox</Heading>
+          <Heading style="h2" font="subheading" weight="normal" cssClass="mt-5 mb-2">Content Headings</Heading>
+          <Heading style="hr1" weight="superbold" cssClass="color-neutral-light text-uppercase my-3">Montserrat</Heading>
+          <Heading style="h1" weight="bold" cssClass="mb-2">The quick brown fox jumps over the lazy</Heading>
+          <Heading style="h2" weight="bold" cssClass="mb-2">The quick brown fox jumps over the lazy</Heading>
+          <Heading style="h3" weight="bold" cssClass="mb-2">The quick brown fox jumps over the lazy</Heading>
+          <Heading style="h4" weight="bold" cssClass="mb-2">The quick brown fox jumps over the lazy</Heading>
+          <Heading style="h5" weight="bold" cssClass="mb-2">The quick brown fox jumps over the lazy</Heading>
+          <Heading style="h6" weight="bold" cssClass="mb-2">The quick brown fox jumps over the lazy</Heading>
+          <Heading style="h2" font="subheading" weight="normal" cssClass="mt-5 mb-2">Content</Heading>
+          <Heading style="hr1" weight="superbold" cssClass="color-neutral-light text-uppercase my-3">Hind Madurai</Heading>
+          <div className="flex-wrap gap-2">
+            <ContentCustom cssClass="flex-wrap align-items-center h-100 font-sm">
+              <p>ALICE was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “ and what is the use of a book,” thought Alice, “ without pictures or conversations ?”</p>
+            </ContentCustom>
+            <ContentCustom cssClass="flex-wrap align-items-center h-100 font-md">
+              <p>ALICE was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “ and what is the use of a book,” thought Alice, “ without pictures or conversations ?”</p>
+            </ContentCustom>
+            <ContentCustom cssClass="flex-wrap align-items-center h-100 font-lg">
+              <p>ALICE was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “ and what is the use of a book,” thought Alice, “ without pictures or conversations ?”</p>
+            </ContentCustom>
+            <ContentCustom cssClass="flex-wrap align-items-center h-100 font-xl">
+              <p>ALICE was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “ and what is the use of a book,” thought Alice, “ without pictures or conversations ?”</p>
+            </ContentCustom>
+            <div className="col-2">
+              <ContentCustom cssClass="flex-wrap align-items-center h-100 font-xxl">
+                <p>ALICE was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “ and what is the use of a book,” thought Alice, “ without pictures or conversations ?”</p>
+              </ContentCustom>  
+            </div>
+            
+          </div>
           <div className="grid-1 grid-lg-2 gap-3">
             <div className="p-3 border inline-flex flex-direction-column">
               <Heading style="h4" font="subheading" weight="normal">Ancient Tales</Heading>

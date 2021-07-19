@@ -25,8 +25,8 @@ p
     @else
       font-size: clamp(#{math.min($mobileBase * math.pow($mobileRatio, $i),$headingBase * math.pow($headingRatio,$i))}#{"rem"}, #{$headingBase * math.pow($headingRatio,$i)}#{"rem"}, #{math.div(($headingBase * math.pow($headingRatio,$i))*1000,$headingSizeThreshold)}#{"vw"})
 
-@for $i from 5 through 6
-  .hr#{7-$i}
+@for $i from 5 through 7
+  .hr#{8-$i}
     font-family: var(--font-family-hero)
     font-weight: var(--weight-bold, 700)
     margin: 0
