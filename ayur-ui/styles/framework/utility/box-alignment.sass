@@ -12,6 +12,12 @@
   align-items: center
 .align-items-bottom
   align-items: flex-end  
+.align-content-start
+  align-content: start
+.align-content-center
+  align-content: center
+.align-content-bottom
+  align-content: end    
 .space-between  
   justify-content: space-between
 .space-around  
@@ -46,7 +52,9 @@
 .r-100
   right: 100%
 .t-100 
-  top: 100%        
+  top: 100%   
+.child-basis-100
+  flex-basis: 100%
 
 @each $key, $value in variables.$spacings
   @each $item, $itemValue in variables.$positions

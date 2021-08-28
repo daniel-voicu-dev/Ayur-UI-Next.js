@@ -6,11 +6,14 @@ import Heading from '../components/Heading'
 import styles from '../styles/Home.module.sass'
 import {animateCSS} from '../components/Utilities'
 
-// import dynamic from "next/dynamic";
-
+import dynamic from "next/dynamic";
+//
 // const lazysizes = dynamic(()=>{return import ('lazysizes').then(mod=>mod.)},{ssr:false})
 // lazysizes.init()
-
+// const DynamicComponentWithNoSSR = dynamic(
+//   () => import('../assets/index'),
+//   { ssr: false }
+// )
 export default function Home() {
   const elementsDR = useRef(null);
   const handleElementsClick = async () => {   
@@ -19,12 +22,13 @@ export default function Home() {
   }
   return (
     <div>
+      {/*<DynamicComponentWithNoSSR/>*/}
       <Head>
         <title>Commergent UI</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+    
       <main className={styles.container}>
         <div>
         <Heading style="hr1" weight="superbold" cssClass="w-100 text-center">Welcome to <span className="color-brand">Commergent UI</span></Heading>          
