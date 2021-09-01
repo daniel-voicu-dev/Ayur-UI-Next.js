@@ -8,14 +8,31 @@ import styles from "../styles/Styleguide.module.sass"
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'
 import dynamic from "next/dynamic";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DynamicComponentWithNoSSR = dynamic(
   () => import('../assets/index').then(mod=>mod.GNotificatioin),
   { ssr: false }
 );
+
 const styleguide = () => {  
   const [theme, settheme] = useState("muted");
   const notificationEl = useRef(null);
+  const notify = () => toast.info('🦄 Wow so easy!');
+  
+  const PromiseNotification = () => {
+    const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
+    toast.promise(
+      resolveAfter3Sec,
+      {
+        pending: 'Promise is pending',
+        success: 'Promise resolved 👌',
+        error: 'Promise rejected 🤯'
+      }
+    )
+  }
+  
   return (
     <>
       
@@ -26,6 +43,18 @@ const styleguide = () => {
     
       <BaseLayout>
         <DynamicComponentWithNoSSR/>
+        <ToastContainer
+          position="top-center"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+       
         <Container container="container">
           
         </Container>  
@@ -304,8 +333,15 @@ const styleguide = () => {
               </ContentCustom>
             </div>
           </div>
-          
-          
+
+          <Heading style="hr2" weight="superbold" cssClass="mt-5">UI Interactions</Heading>
+          <div className={'flex-wrap gap-3'}>
+            <Tippy content={<span>This is the tooltip</span>}>
+              <button type={'button'} className={'btn-fill--brand'}>Tooltip</button>
+            </Tippy>
+            <button type={'button'} className={'btn-fill--brand'} onClick={notify}>Notification</button>
+            <button type={'button'} className={'btn-fill--brand'} onClick={PromiseNotification}>Promise Notification</button>
+          </div>
 
           
           
